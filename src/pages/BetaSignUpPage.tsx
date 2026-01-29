@@ -3,7 +3,8 @@
  * Formular mit Validierung für Beta-Anmeldung
  */
 
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { Input, Select, Textarea, Button, HintBox } from '../components/ui';
 import { BETA_SIGNUP } from '../data/siteContent';
 

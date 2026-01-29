@@ -14,6 +14,7 @@ import {
   TestimonialsPage,
   BetaSignUpPage,
   FAQPage,
+  ImpressumPage,
 } from './pages';
 import { CookieBanner } from './components/ui';
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/signup" element={<BetaSignUpPage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/impressum" element={<ImpressumPage />} />
             
             {/* 404 Fallback */}
             <Route

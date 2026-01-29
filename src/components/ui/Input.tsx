@@ -3,7 +3,7 @@
  * Wiederverwendbare Form-Elemente mit Validierung
  */
 
-import { InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import type { InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 // Base Input
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -14,8 +14,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ label, error, hint, className = '', ...props }: InputProps) {
   return (
-    <div className="w-full">
-      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+    <div className="w-full group">
+      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400">
         {label}
         {props.required && <span className="text-red-600 dark:text-red-400 ml-1">*</span>}
       </label>
@@ -25,9 +25,9 @@ export function Input({ label, error, hint, className = '', ...props }: InputPro
           bg-white dark:bg-slate-800 
           text-slate-900 dark:text-white
           placeholder-slate-400 dark:placeholder-slate-500
-          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent focus:shadow-lg focus:shadow-indigo-500/10
           ${error 
-            ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
+            ? 'border-red-500 bg-red-50 dark:bg-red-900/20 ring-2 ring-red-500/20' 
             : 'border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500'}
           ${className}
         `}
@@ -37,7 +37,7 @@ export function Input({ label, error, hint, className = '', ...props }: InputPro
         <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{hint}</p>
       )}
       {error && (
-        <p className="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+        <p className="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center gap-1 animate-pulse">
           <span>⚠</span> {error}
         </p>
       )}

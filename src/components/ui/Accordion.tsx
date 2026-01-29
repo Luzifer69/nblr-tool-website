@@ -3,7 +3,8 @@
  * Für FAQ-Sections und zusammenklappbare Inhalte
  */
 
-import { useState, ReactNode } from 'react';
+import { useState } from 'react';
+import type { ReactNode } from 'react';
 
 interface AccordionItemProps {
   title: string;
@@ -18,12 +19,12 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
     <div className="border-b border-slate-200 dark:border-slate-700 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 px-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors rounded-lg"
+        className="w-full py-5 px-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 rounded-lg group"
       >
-        <span className="font-medium text-slate-900 dark:text-white">{title}</span>
+        <span className="font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{title}</span>
         <span
-          className={`text-slate-500 dark:text-slate-400 transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
+          className={`text-slate-500 dark:text-slate-400 transition-all duration-300 ${
+            isOpen ? 'rotate-180 text-indigo-500 dark:text-indigo-400' : ''
           }`}
         >
           <svg

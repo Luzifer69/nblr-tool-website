@@ -30,7 +30,7 @@ export function LandingPage() {
             {/* Main Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               {HERO.headline.split(' ').slice(0, -1).join(' ')}{' '}
-              <span className="gradient-text">{HERO.headline.split(' ').slice(-1)}</span>
+              <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">{HERO.headline.split(' ').slice(-1)}</span>
             </h1>
             
             {/* Subheadline */}
@@ -56,7 +56,7 @@ export function LandingPage() {
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
               {HERO.stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="text-3xl font-bold gradient-text">{stat.value}</p>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">{stat.value}</p>
                   <p className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</p>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export function LandingPage() {
             {FEATURES.mainFeatures.slice(0, 3).map((feature, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 card-hover"
+                className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 dark:hover:shadow-black/30"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">{feature.title}</h3>
@@ -191,7 +191,7 @@ export function LandingPage() {
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16">
             {TESTIMONIALS.stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-3xl font-bold gradient-text">{stat.value}</p>
+                <p className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">{stat.value}</p>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</p>
               </div>
             ))}

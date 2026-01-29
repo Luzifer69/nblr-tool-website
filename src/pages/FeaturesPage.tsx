@@ -44,7 +44,7 @@ export function FeaturesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {FEATURES.userFlow.steps.map((step) => (
                 <div key={step.step} className="relative">
-                  <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-center card-hover h-full">
+                  <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 dark:hover:shadow-black/30 h-full">
                     {/* Step Number */}
                     <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-xl flex items-center justify-center font-bold text-lg relative z-10 shadow-lg shadow-indigo-500/25">
                       {step.step}

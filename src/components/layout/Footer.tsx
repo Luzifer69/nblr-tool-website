@@ -57,14 +57,14 @@ export function Footer() {
                     {link.href.startsWith('/') ? (
                       <Link
                         to={link.href}
-                        className="text-slate-400 hover:text-white text-sm transition-colors"
+                        className="text-slate-400 hover:text-white text-sm transition-all duration-200 hover:translate-x-1 inline-block"
                       >
                         {link.label}
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-slate-400 hover:text-white text-sm transition-colors"
+                        className="text-slate-400 hover:text-white text-sm transition-all duration-200 hover:translate-x-1 inline-block"
                       >
                         {link.label}
                       </a>

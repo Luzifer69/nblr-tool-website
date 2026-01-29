@@ -568,9 +568,9 @@ export const FOOTER = {
     {
       title: "Rechtliches",
       links: [
-        { label: "Impressum", href: "#" }, // [PLATZHALTER]
-        { label: "Datenschutz", href: "#" }, // [PLATZHALTER]
-        { label: "AGB", href: "#" }, // [PLATZHALTER]
+        { label: "Impressum", href: "/impressum" },
+        { label: "Nutzungsbedingungen", href: "/impressum" },
+        { label: "Datenschutz", href: "/impressum" }, // TODO: Eigene Datenschutz-Seite
       ],
     },
   ],

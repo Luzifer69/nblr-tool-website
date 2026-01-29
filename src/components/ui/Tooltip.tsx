@@ -3,7 +3,7 @@
  * Für Hinweise und Empfehlungen
  */
 
-import { ReactNode, useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 interface TooltipProps {
   content: string;

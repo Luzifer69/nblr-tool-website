@@ -3,7 +3,7 @@
  * Flexible Card-Komponente für Features, Testimonials, Pricing etc.
  */
 
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface CardProps {
   children: ReactNode;
@@ -20,7 +20,7 @@ export function Card({ children, className = '', highlighted = false, hover = tr
         ${highlighted 
           ? 'border-indigo-500 ring-2 ring-indigo-500/50 dark:ring-indigo-400/50' 
           : 'border-slate-200 dark:border-slate-700'}
-        ${hover ? 'card-hover' : ''}
+        ${hover ? 'hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 dark:hover:shadow-black/30' : ''}
         ${className}
       `}
     >

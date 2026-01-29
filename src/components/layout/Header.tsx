@@ -88,19 +88,22 @@ export function Header() {
         </div>
         
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200 dark:border-slate-800">
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 border-t border-slate-200 dark:border-slate-800">
             <nav className="flex flex-col space-y-1">
-              {NAVIGATION.links.map((link) => (
+              {NAVIGATION.links.map((link, index) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isActive(link.href)
                       ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1'
                   }`}
+                  style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {link.label}
                 </Link>
@@ -116,7 +119,7 @@ export function Header() {
               </Link>
             </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

@@ -37,7 +37,7 @@ export function TestimonialsPage() {
           <div className="grid grid-cols-3 gap-8">
             {TESTIMONIALS.stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-4xl font-bold gradient-text">{stat.value}</p>
+                <p className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">{stat.value}</p>
                 <p className="text-slate-600 dark:text-slate-400 mt-1">{stat.label}</p>
               </div>
             ))}
